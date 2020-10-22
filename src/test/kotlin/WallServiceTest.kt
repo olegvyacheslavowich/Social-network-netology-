@@ -11,7 +11,7 @@ class WallServiceTest {
 
         val addedPost = WallService.addPost(post)
 
-        assertTrue(addedPost.id != 0)
+        assertTrue(addedPost.id == 0)
     }
 
     @Test
@@ -37,7 +37,7 @@ class WallServiceTest {
         WallService.addPost(Post(ownerId = 55, fromId = 3, text ="Second post"))
         WallService.addPost(Post(ownerId = 32, fromId = 3, text ="Third post"))
 
-        var result = WallService.update(Post(id = 90, ownerId = 1, fromId = 3, text ="This is new text of the post!"))
+        var result = WallService.update(Post(id = 2, ownerId = 1, fromId = 3, text ="This is new text of the post!"))
 
         assertFalse(result)
     }
