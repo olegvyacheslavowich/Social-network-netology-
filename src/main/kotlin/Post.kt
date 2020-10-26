@@ -1,7 +1,7 @@
 import java.time.LocalDateTime
 
 data class Post(
-    var id: Int = 0,
+    val id: Int = 0,
     val ownerId: Int,
     val fromId: Int,
     var text: String,
