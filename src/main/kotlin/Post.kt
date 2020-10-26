@@ -1,3 +1,4 @@
+import attachment.Attachment
 import java.time.LocalDateTime
 
 data class Post(
@@ -25,7 +26,8 @@ data class Post(
     val canEdit: Boolean = false,
     val isPinned: Boolean = false,
     val markedAsAds: Boolean = false,
-    val isFavorite: Boolean = false
+    val isFavorite: Boolean = false,
+    val attachments: Array<Attachment>? = null
 ) {
 
 }
