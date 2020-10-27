@@ -1,3 +1,5 @@
+import attachment.PhotoAttachment
+
 fun main() {
 
     WallService.addPost(Post(ownerId = 1, fromId = 5, text ="First post"))
