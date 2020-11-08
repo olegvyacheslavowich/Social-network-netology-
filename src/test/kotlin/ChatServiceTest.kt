@@ -15,7 +15,7 @@ class ChatServiceTest {
         ChatService.sendMessage(1, 3, "Hello, world!")
         val secondMessage = ChatService.sendMessage(1, 3, "How are you?")
 
-        Assert.assertEquals(2, secondMessage.chatId)
+        Assert.assertEquals(1, secondMessage.chatId)
     }
 
     @Test(expected = ChatNotFoundException::class)
@@ -51,7 +51,7 @@ class ChatServiceTest {
         ChatService.clearChats()
 
         ChatService.sendMessage(1, 3, "Hello, world!")
-        ChatService.sendMessage(1, 2, "How are you?")
+        ChatService.sendMessage(1, 3, "How are you!")
 
         val chat = ChatService.getChat(1)
 
@@ -62,7 +62,7 @@ class ChatServiceTest {
     }
 
     @Test(expected = ChatNotFoundException::class)
-    fun deleteMessage_ChatNotFount() {
+    fun deleteMessage_ChatNotFound() {
 
         ChatService.clearChats()
 
@@ -74,12 +74,12 @@ class ChatServiceTest {
     }
 
     @Test(expected = MessageNotFoundException::class)
-    fun deleteMessage_MessageNotFount() {
+    fun deleteMessage_MessageNotFound() {
 
         ChatService.clearChats()
 
         ChatService.sendMessage(1, 3, "Hello, world!")
-        ChatService.sendMessage(1, 2, "How are you?")
+        ChatService.sendMessage(1, 3, "How are you?")
 
         ChatService.deleteMessage(1, 50)
     }

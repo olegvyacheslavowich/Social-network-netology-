@@ -10,7 +10,7 @@ object ChatService {
 
     fun sendMessage(senderId: Int, recipientId: Int, message: String): Message {
 
-        var chatId = if (chats.size == 0) 1 else chats[chats.lastIndex].id + 1
+        var chatId = if (chats.size == 0) 1 else chats.last().id + 1
         val currentChat =
             when (val chat = chats.find { it.firstOwnerId == recipientId || it.secondOwnerId == recipientId }) {
                 null -> {
